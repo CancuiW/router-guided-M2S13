@@ -12,7 +12,12 @@ module.exports = {
 };
 
 function find(query) {
+  console.log(query)
+  // we can change -----> sortdir='desc' 
+  //we can change ---> limit=3
+  //eg: http://localhost:9000/api/adopters?limit=3&sortdir=desc
   const { page = 1, limit = 2, sortby = 'id', sortdir = 'asc' } = query;
+  console.log(query)
   const offset = limit * (page - 1);
 
   const rows = db('adopters')
